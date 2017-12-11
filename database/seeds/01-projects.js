@@ -9,31 +9,36 @@ exports.seed = function(knex, Promise) {
           name: 'project1',
           description: 'description1',
           iscomplete: true,
-          actionId: 1
+          actionIds: JSON.stringify({ "ids": [1, 2] }),
+          contextIds: JSON.stringify({ "ids": [1] })
         },
         {
           name: 'project2',
           description: 'description2',
           iscomplete: false,
-          actionId: 2
+          actionIds: JSON.stringify({ "ids": [4] }),
+          contextIds: JSON.stringify({ "ids": [2, 3] })
         },
         {
           name: 'project3',
           description: 'description3',
           iscomplete: true,
-          actionId: 3
+          actionIds: JSON.stringify({ "ids": [4] }),
+          contextIds: JSON.stringify({ "ids": [4] })
         },
         {
           name: 'project4',
           description: 'description4',
           iscomplete: false,
-          actionId: 1
+          actionIds: JSON.stringify({ "ids": [5] }),
+          contextIds: JSON.stringify({ "ids": [5] })
         },
         {
           name: 'project5',
           description: 'description5',
           iscomplete: true,
-          actionId: 2
+          actionIds: JSON.stringify({ "ids": [6] }),
+          contextIds: JSON.stringify({ "ids": [6] })
         },
       ]);
     });

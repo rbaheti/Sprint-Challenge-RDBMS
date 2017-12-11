@@ -5,13 +5,8 @@ exports.up = function(knex, Promise) {
         tbl.string('name', 128).notNullable();
         tbl.string('description', 128).notNullable();
         tbl.boolean('iscomplete');
-        tbl
-  	      .integer('actionId')
-  	      .notNullable()
-  	      .references('id')
-  	      .inTable('actions')
-  	      .onDelete('CASCADE')
-  	      .onUpdate('CASCADE');
+        tbl.json('actionIds');
+        tbl.json('contextIds');
         tbl.timestamp('createdAt').defaultTo(knex.fn.now());
     });
 };

@@ -12,14 +12,6 @@ exports.up = function(knex, Promise) {
 	      .inTable('projects')
 	      .onDelete('CASCADE')
 	      .onUpdate('CASCADE');
-
-	    tbl
-	      .integer('contextId')
-	      .notNullable()
-	      .references('id')
-	      .inTable('contexts')
-	      .onDelete('CASCADE')
-	      .onUpdate('CASCADE');
         tbl.timestamp('createdAt').defaultTo(knex.fn.now());
     });
 };
